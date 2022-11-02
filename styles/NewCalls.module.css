@@ -1,0 +1,20 @@
+.newCalls {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    display: flex;
+	flex-direction: column;
+}
+
+.newCalls h1 {
+    margin-top: 0;
+}
+
+.actions {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.actions > *:not(:last-child) {
+    margin-right: 0.5rem;
+}

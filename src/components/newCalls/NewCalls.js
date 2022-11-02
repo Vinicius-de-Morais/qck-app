@@ -1,4 +1,7 @@
+import { Button } from "@skynexui/components";
 import React, { useState } from "react";
+
+import styles from "../../../styles/NewCalls.module.css";
 
 /**
  * Temporário; para desenvolvimento da interface.
@@ -11,26 +14,21 @@ const __Dados = {
 	"Segurança": ["briga", "confusão", "emergência médica"]
 }
 
-const pageStyle = {
-	display: "flex",
-	flexDirection: "column",
-};
-
 /**
  * Componente de novo chamado
  * @author Lucas Bortoli
  */
 export default function NewCalls() {
 	// Lista de setores
-	const [sectors, setSectors] = useState(Object.keys(__Dados));
+	const [sectors, setSectors] = useState(Object.keys(__Dados))
 
 	// Índice na lista de setores
-	const [sector, setSector] = useState(0);
+	const [sector, setSector] = useState(0)
 
-	const [quickMessages, setQuickMessages] = useState(__Dados[sectors[sector]]);
+	const [quickMessages, setQuickMessages] = useState(__Dados[sectors[sector]])
 
 	// Mensagem atual, na textbox
-	const [message, setMessage] = useState("");
+	const [message, setMessage] = useState("")
 
 	/**
 	 * Muda o setor selecionado, junto com as mensagens rápidas.
@@ -43,7 +41,7 @@ export default function NewCalls() {
 	}
 
 	return (
-		<div style={{ ...pageStyle }}>
+		<div className={styles.newCalls}>
 			<h1>Novo chamado</h1>
 			<label htmlFor="sector">Setor</label>
 			<select name="sector" onChange={ev => selectSector(parseInt(ev.target.value))}>
@@ -64,6 +62,11 @@ export default function NewCalls() {
 				value={message}
 				onChange={(ev) => setMessage(ev.target.value)}
 			></input>
+
+			<div className={styles.actions}>
+				<Button label="Cancelar"></Button>
+				<Button label="Enviar"></Button>
+			</div>
 		</div>
 	);
 }
