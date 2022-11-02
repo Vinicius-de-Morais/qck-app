@@ -1,6 +1,6 @@
 import React from "react"
 import Calls from "../src/components/calls/Calls"
-
+import { Button } from "@skynexui/components"
 
 // estilos para a 'tela' do telefone
 const stylesDiv = {
@@ -22,6 +22,15 @@ export default function Teste() {
         <div style={stylesDiv}>
             <Calls/>
             
+            <Button
+                colorVariant="negative"
+                iconName="FaExclamationTriangle"
+            />
+            <Button
+                colorVariant="warning"
+                iconName="FaPlus"
+                label="Novo Chamado"
+            />
         </div>
     </>
     )
