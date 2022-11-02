@@ -4,10 +4,77 @@
     border-radius: 12px;
     display: flex;
 	flex-direction: column;
+    font-family: inherit;
+    width: 100%;
+    color: #212121;
+    margin-top: 4rem;
+}
+
+.row {
+    display: flex;
+	flex-direction: column;
+    margin-top: 1rem;
 }
 
 .newCalls h1 {
     margin-top: 0;
+}
+
+.newCalls select {
+    border: none;
+    border-bottom: 1px solid #212121;
+    color: #212121;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    background-color: rgb(248, 248, 248);
+    cursor: pointer;
+    transition: all 100ms;
+    font-size: 1rem;
+
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+}
+
+.newCalls input {
+    border: none;
+    border-bottom: 1px solid #212121;
+    color: #212121;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    background-color: rgb(248, 248, 248);
+    cursor: pointer;
+    transition: all 100ms;
+    font-size: 1rem;
+}
+
+.quickMessages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.quickMessages button {
+    border: 1px solid #212121;
+    color: #212121;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 100ms;
+    font-size: 1rem;
+}
+
+.quickMessages button:hover {
+    background-color: #212121;
+    color: #fff;
+}
+
+.quickMessages button:active {
+    background-color: black;
+    border-color: black;
 }
 
 .actions {

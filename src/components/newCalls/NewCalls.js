@@ -43,29 +43,40 @@ export default function NewCalls() {
 	return (
 		<div className={styles.newCalls}>
 			<h1>Novo chamado</h1>
-			<label htmlFor="sector">Setor</label>
-			<select name="sector" onChange={ev => selectSector(parseInt(ev.target.value))}>
-				{sectors.map((s, i) => (
-					<option key={i} value={i}>{s}</option>
-				))}
-			</select>
-			<label>Mensagens rápidas</label>
-			<div className="quickMessages">
-				{quickMessages.map((msg, i) => (
-					<button key={i} onClick={(() => setMessage(msg))}>{msg}</button>
-				))}
-			</div>
-			<label>Mensagem customizada</label>
-			<input
-				name="customMessage"
-				max="128"
-				value={message}
-				onChange={(ev) => setMessage(ev.target.value)}
-			></input>
 
-			<div className={styles.actions}>
-				<Button label="Cancelar"></Button>
-				<Button label="Enviar"></Button>
+			<div className={styles.row}>
+				<label htmlFor="sector">Setor</label>
+				<select name="sector" onChange={ev => selectSector(parseInt(ev.target.value))}>
+					{sectors.map((s, i) => (
+						<option key={i} value={i}>{s}</option>
+					))}
+				</select>
+			</div>
+
+			<div className={styles.row}>
+				<label>Mensagens rápidas</label>
+				<div className={styles.quickMessages}>
+					{quickMessages.map((msg, i) => (
+						<button key={i} onClick={() => setMessage(msg)}>{msg}</button>
+					))}
+				</div>
+			</div>
+
+			<div className={styles.row}>
+				<label>Mensagem customizada</label>
+				<input
+					name="customMessage"
+					max="128"
+					value={message}
+					onChange={(ev) => setMessage(ev.target.value)}
+				></input>
+			</div>
+
+			<div className={styles.row}>
+				<div className={styles.actions}>
+					<Button label="Cancelar"></Button>
+					<Button label="Enviar"></Button>
+				</div>
 			</div>
 		</div>
 	);
