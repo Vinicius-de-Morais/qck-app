@@ -33,7 +33,7 @@ export default function Teste() {
                 label="Novo Chamado"
             />
 
-            <NewCalls />
+            <NewCalls onConfirm={() => alert("Enviando...")} onCancel={() => alert("Cancelado")} />
         </div>
     </>
     )

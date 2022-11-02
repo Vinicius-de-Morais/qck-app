@@ -1,6 +1,5 @@
 .newCalls {
     padding: 1rem;
-    border: 1px solid #ccc;
     border-radius: 12px;
     display: flex;
 	flex-direction: column;
@@ -8,6 +7,7 @@
     width: 100%;
     color: #212121;
     margin-top: 4rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.10), 0 3px 6px rgba(0,0,0,0.17);
 }
 
 .row {
@@ -30,6 +30,7 @@
     cursor: pointer;
     transition: all 100ms;
     font-size: 1rem;
+    outline: none;
 
     appearance: none;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
@@ -45,9 +46,31 @@
     border-radius: 4px;
     padding: 0.5rem 1rem;
     background-color: rgb(248, 248, 248);
+    transition: all 100ms;
+    font-size: 1rem;
+    outline: none;
+}
+
+.newCalls select:hover, .newCalls input:hover {
+    background-color: rgb(208, 208, 215);
+}
+
+.newCalls select:focus, .newCalls input:focus {
+    background-color: rgb(240, 240, 240);
+}
+
+.newCalls button {
+    border: none;
+    color: #212121;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
     cursor: pointer;
     transition: all 100ms;
     font-size: 1rem;
+}
+
+.newCalls button:hover {
+    background-color: rgb(208, 208, 215);
 }
 
 .quickMessages {
@@ -58,13 +81,7 @@
 
 .quickMessages button {
     border: 1px solid #212121;
-    color: #212121;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
     background-color: transparent;
-    cursor: pointer;
-    transition: all 100ms;
-    font-size: 1rem;
 }
 
 .quickMessages button:hover {

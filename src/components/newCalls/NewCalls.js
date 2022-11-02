@@ -17,8 +17,11 @@ const __Dados = {
 /**
  * Componente de novo chamado
  * @author Lucas Bortoli
+ * @param {Object} props
+ * @param {(() => void)?} props.onConfirm Chamado quando o botão de confirmar é clicado.
+ * @param {(() => void)?} props.onCancel Chamado quando o botão de cancelar é clicado.
  */
-export default function NewCalls() {
+export default function NewCalls({ onConfirm, onCancel }) {
 	// Lista de setores
 	const [sectors, setSectors] = useState(Object.keys(__Dados))
 
@@ -74,8 +77,8 @@ export default function NewCalls() {
 
 			<div className={styles.row}>
 				<div className={styles.actions}>
-					<Button label="Cancelar"></Button>
-					<Button label="Enviar"></Button>
+					<button onClick={() => onCancel ? onCancel() : false}>Cancelar</button>
+					<button onClick={() => onConfirm ? onConfirm() : false}>Enviar</button>
 				</div>
 			</div>
 		</div>
