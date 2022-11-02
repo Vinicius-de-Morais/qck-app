@@ -34,6 +34,33 @@ export default function NewCalls({ onConfirm, onCancel }) {
 	const [message, setMessage] = useState("")
 
 	/**
+	 * Altera um fragmento rápido na mensagem
+	 * @param {string} fragment 
+	 */
+	const changeQuickMessage = (fragment) => {
+		fragment = fragment.trim();
+
+		// Separar fragmentos por vírgulas
+		let fragments = message.split(",").map(s => s.trim());
+
+		let fragmentIndex = fragments.indexOf(fragment);
+
+		// Se o fragmento já existe na mensagem, removê-lo
+		if (fragmentIndex > -1) {
+			fragments = [...fragments.slice(0, fragmentIndex), ...fragments.slice(fragmentIndex + 1) ];
+		} else {
+			// Senão, adicioná-lo
+			fragments.push(fragment);
+		}
+
+		// Filtrar elementos vazios
+		fragments = fragments.filter(s => s.length);
+
+		// Juntar os fragmentos em uma só mensagem
+		setMessage(fragments.join(", "));
+	}
+
+	/**
 	 * Muda o setor selecionado, junto com as mensagens rápidas.
 	 * @param {number} sectorIndex 
 	 */
@@ -60,7 +87,7 @@ export default function NewCalls({ onConfirm, onCancel }) {
 				<label>Mensagens rápidas</label>
 				<div className={styles.quickMessages}>
 					{quickMessages.map((msg, i) => (
-						<button key={i} onClick={() => setMessage(msg)}>{msg}</button>
+						<button key={i} onClick={() => changeQuickMessage(msg)}>{msg}</button>
 					))}
 				</div>
 			</div>

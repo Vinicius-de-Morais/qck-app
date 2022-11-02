@@ -91,8 +91,8 @@
 }
 
 .quickMessages button:active {
-    background-color: black;
-    border-color: black;
+    background-color: rgb(80, 80, 80);
+    border-color: rgb(80, 80, 80);
 }
 
 .actions {
