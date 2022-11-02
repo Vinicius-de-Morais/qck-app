@@ -1,7 +1,69 @@
-import React from "react"
+import React, { useState } from "react";
 
-export default function NewCalls(){
-    return(
-        "This is a NewCalls component"
-    )
+/**
+ * Temporário; para desenvolvimento da interface.
+ * Mantém uma lista de setores, e os relaciona com suas mensagens rápidas.
+ * @todo Tirar isso aqui e usar algo não hardcoded.
+ * @author Lucas Bortoli
+ */
+const __Dados = {
+	"Limpeza": ["sujeira", "no corredor", "na cozinha", "no banheiro"],
+	"Segurança": ["briga", "confusão", "emergência médica"]
+}
+
+const pageStyle = {
+	display: "flex",
+	flexDirection: "column",
+};
+
+/**
+ * Componente de novo chamado
+ * @author Lucas Bortoli
+ */
+export default function NewCalls() {
+	// Lista de setores
+	const [sectors, setSectors] = useState(Object.keys(__Dados));
+
+	// Índice na lista de setores
+	const [sector, setSector] = useState(0);
+
+	const [quickMessages, setQuickMessages] = useState(__Dados[sectors[sector]]);
+
+	// Mensagem atual, na textbox
+	const [message, setMessage] = useState("");
+
+	/**
+	 * Muda o setor selecionado, junto com as mensagens rápidas.
+	 * @param {number} sectorIndex 
+	 */
+	const selectSector = (sectorIndex) => {
+		setSector(sectorIndex)
+		setQuickMessages(__Dados[sectors[sectorIndex]])
+		setMessage("")
+	}
+
+	return (
+		<div style={{ ...pageStyle }}>
+			<h1>Novo chamado</h1>
+			<label htmlFor="sector">Setor</label>
+			<select name="sector" onChange={ev => selectSector(parseInt(ev.target.value))}>
+				{sectors.map((s, i) => (
+					<option key={i} value={i}>{s}</option>
+				))}
+			</select>
+			<label>Mensagens rápidas</label>
+			<div className="quickMessages">
+				{quickMessages.map((msg, i) => (
+					<button key={i} onClick={(() => setMessage(msg))}>{msg}</button>
+				))}
+			</div>
+			<label>Mensagem customizada</label>
+			<input
+				name="customMessage"
+				max="128"
+				value={message}
+				onChange={(ev) => setMessage(ev.target.value)}
+			></input>
+		</div>
+	);
 }
