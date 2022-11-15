@@ -1,0 +1,158 @@
+/* CALL ATENDIDA*/
+.box {
+    background-color: rgb(218, 207, 207);
+
+    box-shadow: 2px 2px 6px 1px #00000038;
+
+    border-radius: 18px;
+
+    width: 360px;
+
+    margin-top: 1em;
+}
+
+
+
+/* CALL PENDENTE*/
+.boxUnChecked {
+    background-color: #FFCC80;
+
+    box-shadow: 2px 2px 6px 1px #00000038;
+
+    border-radius: 0.5rem;
+
+    width: 360px;
+
+    margin-top: 1em;
+}
+
+.boxHeader h3 {
+    display: inline;
+    margin-left: 0.5rem;
+}
+
+.boxHeader span {
+    font-weight: bolder;
+    position: absolute;
+    left: 22rem;
+
+    cursor: pointer;
+}
+
+.min {
+    background-color: rgb(218, 207, 207);
+    box-shadow: 1px 1px 5px black;
+    border-radius: 0.5rem;
+}
+
+.textArea {
+    text-align: justify;
+    width: 270px;
+
+    border: 0;
+    margin: 0.5rem 0rem 0.5rem 0.5rem;
+}
+
+
+.footerBox {
+    font-size: 0.8em;
+    padding: 0.3rem 0rem 0.2rem 0.6rem;
+}
+
+
+
+/* CHECK BOX DE CALL PENDENTE*/
+.checkbox{
+    display:block;
+
+    margin: 0;
+
+    width: 32px;
+    height: 32px;
+
+    position: absolute;
+    top: 7rem;
+    left: 21rem;
+
+    border-radius: 3px;
+
+    box-shadow: 0px 0px 6px 1px #00000030;
+    background-color: #fff;
+
+    cursor: pointer;
+}
+
+.checkbox path {
+    display: none;
+    position: absolute;
+    top: 0.2rem;
+    left: 0.3rem;
+}
+
+/* CHECKBOX MARCADA */
+.checkboxChecked {
+    display: block;
+
+    margin: 0;
+
+    width: 32px;
+    height: 32px;
+
+    position: absolute;
+    top: 7rem;
+    left: 21rem;
+
+    border-radius: 3px;
+
+    box-shadow: 0px 0px 6px 1px #00000030;
+    background-color: #DCEDC8;
+
+    cursor: pointer;
+}
+
+.checkboxChecked label {
+    cursor: pointer;
+    display: show;
+    position: absolute;
+    top: 0.2rem;
+    left: 0.3rem;
+}
+
+
+
+/* CALL MINIMIZADA */
+
+.minBox {
+    background-color: rgb(218, 207, 207);
+
+    box-shadow: 2px 2px 6px 1px #00000038;
+
+    border-radius: 18px;
+
+    width: 360px;
+
+    margin-top: 1em;
+
+}
+
+.minBox h3 {
+    margin-left: 0.5rem;
+    display: inline;
+
+    color: rgba(0, 0, 0, 0.815);
+}
+
+.minBox td{
+    display: inline;
+    position: absolute;
+    top: 5rem;
+    left: 10rem;
+    
+    font-size: 13px;
+}
+
+.minBox span {
+    font-weight: bold;
+    position: absolute;
+    left: 22rem;
+} 
