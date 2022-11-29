@@ -31,7 +31,11 @@ export default function Teste() {
 
             {/* Calls element */}
             <div>
-                <Calls/>
+                <Calls 
+                    sector="Segurança" 
+                    message="Meu deus a porradaria ta generalizada aqui na entrada, alguém ajuda!!!!!"
+                    time ="13:30"
+                />
             </div>
             
             {/* Exibe ou nao a new calls baseado no botao */}
